@@ -42,7 +42,7 @@ app.post("/signin", (req, res) => {
                         jwt.sign({ email: input.email }, "blog-app", { expiresIn: "1d" },
                             (error, token) => {
                                 if (error) {
-                                    res.json({ "ststus": "unable to create token" })
+                                    res.json({ "status": "unable to create token" })
                                 }
                                 else {
                                     res.json({ "status": "success", "userId": response[0]._id, "token": token })
@@ -125,6 +125,6 @@ app.post("/delete",(req,res)=>{
     )
 })
 
-app.listen(8080, () => {
+app.listen(8082, () => {
     console.log("server Started")
 })
